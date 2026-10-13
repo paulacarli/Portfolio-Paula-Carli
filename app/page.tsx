@@ -126,7 +126,7 @@ export default function Home() {
             I&apos;m Paula!
           </h1>
           <p className="text-base text-gray-700 leading-relaxed mb-3">
-            I&apos;m a multidisciplinary designer crafting rich user-centric experiences.
+            I&apos;m a designer crafting rich user-centric experiences.
           </p>
           <p className="text-base text-gray-700 leading-relaxed mb-6">
             My designs forge strong connections between people and products.
@@ -149,7 +149,7 @@ export default function Home() {
               I&apos;m Paula!
             </h1>
             <p className="text-base text-gray-700 leading-relaxed mb-3 max-w-xs">
-              I&apos;m a multidisciplinary designer crafting rich user-centric experiences.
+              I&apos;m a designer crafting rich user-centric experiences.
             </p>
             <p className="text-base text-gray-700 leading-relaxed max-w-xs">
               My designs forge strong connections between people and products.
