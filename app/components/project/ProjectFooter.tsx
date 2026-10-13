@@ -51,7 +51,7 @@ export default function ProjectFooter({ contactHref = "mailto:paulacarli@gmail.c
             </div>
           </div>
           <div className="text-left md:text-right text-sm text-gray-500 space-y-0.5">
-            <p>København II, DK</p>
+            <p>København S, DK</p>
             <a href="mailto:paulacarli@gmail.com" className="hover:text-black transition-colors block">paulacarli@gmail.com</a>
             <a href="https://wa.me/4591887379" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors block">+4591887379</a>
           </div>
