@@ -302,37 +302,74 @@ export default function Home() {
             Interests<Dot />
           </h2>
 
-          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-            <div className="w-full md:w-[250px] md:flex-shrink-0 h-[250px] overflow-hidden bg-stone-300" style={{ borderRadius: 16 }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/img-interests.gif" alt="Interests" className="w-full h-full object-cover" />
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start">
+            {/* Stacked prints */}
+            <div className="relative w-[280px] max-w-full aspect-square flex-shrink-0">
+              {[
+                { src: "/img-interests-pasta.jpg", alt: "Making fresh pasta", pos: "left-[2%] top-[6%] -rotate-[7deg]" },
+                { src: "/img-interests-bread.jpg", alt: "Homemade bread", pos: "right-[2%] top-[2%] rotate-[6deg]" },
+                { src: "/img-interests-crochet.jpg", alt: "Crochet projects", pos: "left-[20%] top-[22%] -rotate-1" },
+              ].map((p) => (
+                <div
+                  key={p.src}
+                  className={`absolute w-[62%] aspect-[4/5] bg-white p-2 pb-[22px] rounded shadow-[0_2px_10px_rgba(26,26,26,0.14)] transition-transform duration-300 hover:z-10 hover:scale-105 ${p.pos}`}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={p.src} alt={p.alt} className="w-full h-full object-cover rounded-sm" />
+                </div>
+              ))}
             </div>
 
-            <div className="flex-1 space-y-3 text-sm text-gray-700 leading-relaxed">
+            <div className="flex-1 text-sm text-gray-700 leading-relaxed">
               <p>
-                Outside of my design work, I dedicate time to pursuits that enrich
+                Outside of my design work, I dedicate time to activities that enrich
                 my creativity and give me fresh perspectives. These personal projects
                 and hobbies are another way I can explore how to translate my
                 inspiration into meaningful results.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── WORKSHOPS ── */}
+      <section id="workshops" className="px-4 md:px-8 py-12 md:py-16">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-semibold mb-8 md:mb-10 tracking-tight">
+            Workshops<Dot />
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 md:gap-12 items-start">
+            <div className="flex flex-col gap-4 text-sm text-gray-700 leading-relaxed">
               <p>
-                I&apos;m also passionate about bespoke bookbinding, and I run workshops
-                that help others to create community around this creative pursuit.
+                I&apos;m also passionate about handmade bookbinding, and I run workshops
+                that help others build a community around this craft.
               </p>
-              <div className="flex gap-4 pt-2 flex-wrap items-center">
-                {[
-                  "01_icon_ball.svg",
-                  "02_icon_draw.svg",
-                  "03_icon_photo.svg",
-                  "04_icon_bread.svg",
-                  "06_icon_spaguetti.svg",
-                  "07_icon_sew.svg",
-                  "08_icon_series.svg",
-                ].map((icon) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={icon} src={`/${icon}`} alt={icon} className="w-[58px] h-[58px]" />
-                ))}
-              </div>
+              <p className="flex flex-col gap-0.5 pt-3 border-t border-gray-200 font-medium text-[#1a1a1a]">
+                <span className="text-[11px] font-bold tracking-widest uppercase" style={{ color: ORANGE }}>
+                  Next workshop
+                </span>
+                Guest teacher at VERA højskole
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[110px] md:auto-rows-[130px] gap-2.5">
+              {[
+                { src: "/img-workshop-teaching.jpg", alt: "Paula teaching a bookbinding workshop", big: true },
+                { src: "/img-workshop-stack.jpg", alt: "Stack of hand-sewn books" },
+                { src: "/img-workshop-floral.jpg", alt: "Finished book with a floral cover" },
+                { src: "/img-workshop-tools.jpg", alt: "Glue, brushes and workshop instructions" },
+                { src: "/img-workshop-press.jpg", alt: "Books in a bookbinding press" },
+              ].map((p) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  key={p.src}
+                  src={p.src}
+                  alt={p.alt}
+                  loading="lazy"
+                  className={`w-full h-full object-cover rounded-xl ${p.big ? "col-span-2 row-span-2 object-[50%_40%]" : ""}`}
+                />
+              ))}
             </div>
           </div>
         </div>
