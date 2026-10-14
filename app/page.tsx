@@ -327,6 +327,20 @@ export default function Home() {
                 and hobbies are another way I can explore how to translate my
                 inspiration into meaningful results.
               </p>
+              <div className="flex gap-4 pt-5 flex-wrap items-center">
+                {[
+                  "01_icon_ball.svg",
+                  "02_icon_draw.svg",
+                  "03_icon_photo.svg",
+                  "04_icon_bread.svg",
+                  "06_icon_spaguetti.svg",
+                  "07_icon_sew.svg",
+                  "08_icon_series.svg",
+                ].map((icon) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img key={icon} src={`/${icon}`} alt="" className="w-[58px] h-[58px]" />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -353,23 +367,34 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[110px] md:auto-rows-[130px] gap-2.5">
-              {[
-                { src: "/img-workshop-teaching.jpg", alt: "Paula teaching a bookbinding workshop", big: true },
-                { src: "/img-workshop-stack.jpg", alt: "Stack of hand-sewn books" },
-                { src: "/img-workshop-floral.jpg", alt: "Finished book with a floral cover" },
-                { src: "/img-workshop-tools.jpg", alt: "Glue, brushes and workshop instructions" },
-                { src: "/img-workshop-press.jpg", alt: "Books in a bookbinding press" },
-              ].map((p) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  key={p.src}
-                  src={p.src}
-                  alt={p.alt}
-                  loading="lazy"
-                  className={`w-full h-full object-cover rounded-xl ${p.big ? "col-span-2 row-span-2 object-[50%_40%]" : ""}`}
-                />
-              ))}
+            <div className="grid grid-cols-1 sm:grid-cols-[3fr_4fr] gap-2.5">
+              {/* Main photo keeps its full portrait shape, so nothing is cropped */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/img-workshop-teaching.jpg"
+                alt="Paula teaching a bookbinding workshop"
+                loading="lazy"
+                className="w-full aspect-[3/4] object-cover rounded-xl"
+              />
+              <div className="relative">
+              <div className="grid grid-cols-2 grid-rows-2 gap-2.5 sm:absolute sm:inset-0">
+                {[
+                  { src: "/img-workshop-stack.jpg", alt: "Stack of hand-sewn books" },
+                  { src: "/img-workshop-floral.jpg", alt: "Finished book with a floral cover" },
+                  { src: "/img-workshop-tools.jpg", alt: "Glue, brushes and workshop instructions" },
+                  { src: "/img-workshop-press.jpg", alt: "Books in a bookbinding press" },
+                ].map((p) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    key={p.src}
+                    src={p.src}
+                    alt={p.alt}
+                    loading="lazy"
+                    className="w-full h-full min-h-0 aspect-square sm:aspect-auto object-cover rounded-xl"
+                  />
+                ))}
+              </div>
+              </div>
             </div>
           </div>
         </div>
